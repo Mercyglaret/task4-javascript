@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+          body{
+            overflow-x: hidden;
+           }
+ 
+	  .header{
+    		background-color: #f77878;
+           
+    	}
+    	input {
+            outline: 0;
+            border-width: 0 0 2px;
+            border-color: blue;
+            width: 65%;
+            height: 40px;
+            font-size: 20px;
+        	font-weight: bolder;
+            color: blue;
+        }
+        input:focus {
+        border-color: green;
+        }
+        button{
+        	width: 30%;
+        	height: 45px;
+        	border-radius: 10px;
+        	border: 2px solid blue;
+        	outline: none !important;
+        	font-size: 20px;
+        	background-color: blue;
+        	color: white;
+        	font-weight: bolder;
+
+        }
+        p{
+        	color: green;
+        	font-size: 20px;
+        	font-weight: bolder;
+        }
+        .overflowTest {
+            color: blue;
+       overflow-y: scroll;
+       height: 80px;
+}
+        .but{
+        	width: 75%;
+        }
+        h4{
+        	color: blue;
+        }
+       
+</style>
+<body>
+	 <div class="header" style=" height:70px;">
+    		
+    	</div>
+    <div class="container-fluid">
+
+	<div class="row">
+
+		<div class="col-lg-4 header">
+			
+		</div>
+		<div class="col-lg-4 text-center header">
+			<div class="container bg-white">
+			<br>
+
+				<h4 class="text-center">Between 2 numbers<h4>
+			<br>
+          <br>
+          <input placeholder="Enter the first number" id="firstnum" type="number" />
+          <br>
+          <br>
+          <input placeholder="Enter the last number" id="secondnum" type="number" />
+
+			<br>
+          <br><br>
+		   <button onclick="mer()">Get Ans</button>
+		   <br>
+		   <br>
+		   <p class="overflowTest" id="demo"></p>
+		   <br>
+		   <hr class="border">
+		  </div>
+		</div>
+		<div class="col-lg-4 header">
+			
+		</div>
+		
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-lg-4 header">
+			
+		</div>
+		<div class="col-lg-4 header">
+			<div class="container bg-white">
+
+				<br>
+				<h4 class="text-center">largest smallest number <h4>
+
+				<br>
+				<br>
+
+			<div class="row">
+				<div class="col-lg-4 text-center">
+                  <input placeholder="num1" id="num1" type="number" />
+				</div>
+				<br><br>
+				<div class="col-lg-4 text-center">
+					
+                  <input placeholder="num2" id="num2" type="number" />
+				</div>
+				<br><br>
+				<div class="col-lg-4 text-center">
+                  <input placeholder="num3" id="num3" type="number" />
+				</div>
+				
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="row">
+				<div class="col-lg-2">
+					
+				</div>
+				<div class="col-lg-4 text-center">
+		          <button class="but" onclick="mercy()">large</button>
+				</div><br><br><br>
+				<div class="col-lg-4 text-center">
+		          <button class="but" onclick="merc()">small</button>
+				</div>
+				<div class="col-lg-2">
+					
+				</div>
+				
+			</div>
+				<br>
+				
+
+			
+		</div></div>
+		<div class="col-lg-4 header">
+			
+		</div>
+		
+	</div>
+</div>
+<div class="header" style="height: 70px;">
+	
+</div>
+</body>
+<script type="text/javascript">
+	function mercy(){
+		num1=document.getElementById('num1').value;
+		num2=document.getElementById('num2').value;
+		num3=document.getElementById('num3').value;
+	    var x='';
+        num1=parseInt(num1);
+        num2=parseInt(num2);
+        num3=parseInt(num3);
+
+    x=(num1 > num2) ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3);
+	window.alert(x +" is Largest number")
+	
+
+/*if (num1>num2 && num1>num3) {
+	window.alert(num1+"is big")
+}
+else if (num2>num1 && num2>num3) {
+	window.alert(num2+"is big")
+}
+else if (num3>num2 && num3>num1) {
+	window.alert(num3+"is big")
+}*/
+
+	  	}
+	
+function merc(){
+	x=(num1 < num2) ? (num1 < num3 ? num1 : num3) : (num2 < num3 ? num2 : num3);
+	window.alert(x +" is smallest number")
+}
+
+function mer(){
+	  numone=document.getElementById('firstnum').value;
+      numtwo=document.getElementById('secondnum').value;
+      var x="";
+      var numone=parseInt(numone);
+      var numtwo=parseInt(numtwo);
+      numone=numone;
+      numtwo=numtwo;
+      var i,j;
+      if (numone < numtwo) {
+      for (i= numone; i<= numtwo; i++) {
+      x +=[i+"<br>"];
+      }}
+      else if (numone > numtwo){
+      	for (j= numone; j>= numtwo; j--) {
+      x +=[j+"<br>"];
+      }
+      }
+      document.getElementById('demo').innerHTML = x ;
+	  	}
+	
+
+
+
+
+</script>
+</html>
